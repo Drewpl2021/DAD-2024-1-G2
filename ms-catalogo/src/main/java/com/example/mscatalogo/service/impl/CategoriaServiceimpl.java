@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoriaServiceimpl implements CategoriaService {
+public class CategoriaServiceImpl implements CategoriaService {
+
     @Autowired
     private CategoriaRepository categoriaRepository;
     @Override
     public List<Categoria> listar() {
         return categoriaRepository.findAll();
     }
-
     @Override
     public Categoria guardar(Categoria categoria) {
         return categoriaRepository.save(categoria);
@@ -29,12 +29,12 @@ public class CategoriaServiceimpl implements CategoriaService {
     }
 
     @Override
-    public Optional<Categoria> listarPorId(Integer id) {
+    public Optional<Categoria> listaPorld(Integer id) {
         return categoriaRepository.findById(id);
     }
 
     @Override
-    public void eliminarPorId(Integer id) {
-    categoriaRepository.deleteById(id);
+    public void eliminar(Integer id) {
+        categoriaRepository.deleteById(id);
     }
 }

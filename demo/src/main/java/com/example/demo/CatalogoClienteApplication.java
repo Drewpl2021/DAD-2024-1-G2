@@ -1,22 +1,21 @@
-package com.example.mscatalogo;
+package com.example.demo;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
 
 @SpringBootApplication
+public class CatalogoClienteApplication {
 
-public class MsCatalogoApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(CatalogoClienteApplication.class, args);
+	}
 
-    public static void main(String[] args) {
-        SpringApplication.run(MsCatalogoApplication.class, args);
-    }
-
-    @Bean
+	@Bean
     public OpenAPI custumOpenAPI(){
         return new OpenAPI().info(new Info()
                 .title("Open API Microservicios catalogo")
@@ -26,4 +25,5 @@ public class MsCatalogoApplication {
                 .license(new License().name("Apache 2.0").url("http://springdoc.org"))
         );
     }
+
 }
